@@ -1,0 +1,16 @@
+{
+  "name": "سجل الطلاب",
+  "short_name": "سجل الطلاب",
+  "description": "سجل الطلاب مع مولد الامتحانات",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "dir": "rtl",
+  "lang": "ar",
+  "background_color": "#1E3A5F",
+  "theme_color": "#1E3A5F",
+  "icons": [
+    { "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

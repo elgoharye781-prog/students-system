@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سجل الطلاب</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon.svg">
+<meta name="theme-color" content="#1E3A5F">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="سجل الطلاب">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<!-- مكتبة KaTeX لعرض الرموز والمعادلات الرياضية بشكل احترافي داخل مولد الامتحانات -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="lockRoot"></div>
+<div class="app" id="appRoot">
+  <div id="alarmRoot"></div>
+  <header class="top">
+    <div class="header-math-deco" id="headerMathDeco" aria-hidden="true"></div>
+    <div class="search-box"><input id="searchInput" type="text" placeholder="ابحث بالاسم…" oninput="app.onSearch(this.value)"></div>
+    <div class="top-actions">
+      <button class="btn-ghost" id="themeToggleBtn" onclick="app.toggleDarkMode()">🌙 الوضع الليلي</button>
+      <button class="btn-ghost" onclick="app.exportData()">⬇ نسخة احتياطية</button>
+      <button class="btn-ghost" onclick="document.getElementById('importFile').click()">⬆ استيراد</button>
+      <input type="file" id="importFile" accept=".json" style="display:none" onchange="app.importData(event)">
+    </div>
+    <div style="margin-left:auto;text-align:left;position:relative;z-index:1;">
+      <div class="brand" style="margin-left:0;"><span class="seal">📐</span> Student Register</div>
+      <div id="headerTeacherLine" style="font-size:14px;font-weight:600;color:rgba(243,238,224,0.9);margin-top:3px;">Mr. Mahmoud Elgohary</div>
+      <div style="font-size:9.5px;color:rgba(243,238,224,0.55);margin-top:2px;">Developed by Elsayed Mohammed ELGOHARY</div>
+    </div>
+  </header>
+  <div class="body-wrap">
+    <nav class="tabs" id="tabsNav"></nav>
+    <main id="mainContent"></main>
+  </div>
+</div>
+<div id="modalRoot"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
